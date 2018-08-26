@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>news api</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ </head>
+<body>
+<div id="jsonresp" style="margin-top: 100px; background-color:#FFE5B5; ">
+   {% for news in news_list %}
+   <button id="nbanews_{{ news.id }}" class="apireq" data-id="{{ news.id }}">
+           <h4>{{ news.title }}</h4>
+           <h5>{{ news.author }}</h5>
+   </button>
+    {% endfor %}
+   <p><span id="Title"></span></p>
+   <img id="nbaimage" src="" width="450">
+   <p><span id="Author"></span></p>
+   <p><span id="Body"></span></p>
+   <p>相關影片:<span id="Video"></span></p>
+
+
+</div>
+<div class="center" id="sidebar"  style="background-color:powderblue;" >
+    <span style="font-size:24px;">
+    {% include "pagination.html" with page=page_obj %}
+    <p>This is LHS's site，data source: https://nba.udn.com/nba/index?gr=www</p>
+    </span>
+</div>
+    <script type="text/javascript">
+    $('.apireq').click( function() {
+    <!-- JavaScript 程式 // 點擊function的attr的id都不同 需作區別 -->
+    var list_id = $(this).attr('id')
+    $.ajax({
+             url : "https://djangonba.herokuapp.com/newsapi",
+             dataType: "json",
+             success : function (data) {
+                      var news = document.getElementById(list_id);
+                      var id = news.getAttribute('data-id');
+                      id = id - 1;
+                      $('#Title').text( data[id].title);
+                      $('#nbaimage').attr('src', data[id].image_link);
+                      $('#Author').text( data[id].author);
+                      $('#Body').text( data[id].body);
+                      $('#Video').text( data[id].video);
+                    }
+                 });
+             });
+    </script>
+</body>
+</html>
