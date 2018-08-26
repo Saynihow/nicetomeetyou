@@ -1,6 +1,6 @@
-# nice to meet you(完成)
-1. 抓取 https://nba.udn.com/nba/index?gr=www 中的焦點新聞。
-2. 使用 [Django](https://www.djangoproject.com/) 設計恰當的 Model，并將所抓取新聞存儲至 DB。
+# nice to meet you
+1. 抓取 https://nba.udn.com/nba/index?gr=www 中的焦點新聞。(完成)
+2. 使用 [Django](https://www.djangoproject.com/) 設計恰當的 Model，并將所抓取新聞存儲至 DB。(完成)
    DB table:
      title-標題
      author-作者
@@ -9,12 +9,12 @@
      image_link-新聞圖片連結
      video_link-新聞影音連結
      
-3. 使用 [Django REST Framework](http://www.django-rest-framework.org/) 配合 AJAX 實現以下頁面：
+3. 使用 [Django REST Framework](http://www.django-rest-framework.org/) 配合 AJAX 實現以下頁面：(完成)
 	 * 焦點新聞列表
 	 * 新聞詳情頁面
 	 由jquery通過AJAX獲取serializers的json data
 	 
-4. 以 Pull-Request 的方式將代碼提交。
+4. 以 Pull-Request 的方式將代碼提交。(完成)
 	
 ## 進階要求
 1. 實現爬蟲自動定時抓取。(未完成)
