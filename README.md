@@ -1,5 +1,7 @@
 # nice to meet you  
+Second project  
 demo網址:https://djangonba.herokuapp.com/  
+  
 1. 抓取 https://nba.udn.com/nba/index?gr=www 中的焦點新聞。(完成)  
 2. 使用 [Django](https://www.djangoproject.com/) 設計恰當的 Model，并將所抓取新聞存儲至 DB。(完成)  
    DB table:  
